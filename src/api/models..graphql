@@ -1,0 +1,32 @@
+type User {
+  id: ID!
+  name: String!
+  gender: String!
+  email: String!
+  post: [Post!]!
+  comments: [Comment!]!
+  loginSecret: String
+  createdAt: string!
+  updatedAt: string!
+  isSelf: Boolean!
+}
+
+type Post{
+  id: ID!
+  user: User
+  title: String!
+  contents: String!
+  comments: [Comment!]!
+  image: String
+  createdAt: string!
+  updatedAt: string!
+}
+
+type Comment{
+  id: ID!
+  text: String!
+  user: User!
+  post: Post
+  createdAt: string!
+  updatedAt: string!
+}
